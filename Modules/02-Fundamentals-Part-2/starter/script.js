@@ -232,6 +232,7 @@ const tips = bills.map(calcTip); // .map es un metodo en arrays para aplicar una
 console.log(tips);
 */
 
+/*
 //OBJECTS
 const jonasArray = [ 
     'Jonas',
@@ -246,3 +247,56 @@ const jonas = {
     age: 2037 - 1991,
     job: 'teacher'
 }
+*/
+
+/*
+//Dot vs Bracket Notation 
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+console.log(jonas);
+
+console.log(jonas.lastName);
+console.log(jonas['lastName']); //En las bracket notation podemos colocar cualqueir expresion deseada
+
+//Ejemplo de uso del Bracket Notation
+const nameKey = 'Name';
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
+
+//En casos que debamos computar dos expresiones que contengan el mismo nombre, utilizar el bracket
+//En todos los otros casos se recomienda el dot notation. 
+
+//Ejemplo de uso Bracket Notation
+const interestIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
+if(jonas[interestIn]){
+    console.log(jonas[interestIn]);
+} else {
+    console.log('Wrong Request! Choose between firstName, lastName, age, job, and friends')
+}
+
+jonas.location = 'Portugal'; //Agregando otros keys a nuestro object.
+jonas['twitter'] = '@jonasschmedtman';
+console.log(jonas);
+*/
+
+//Module Challenge
+//"Jonas has 3 friends, and his best friend is called Michael".
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+
+//Solucion Diego Alvarado
+const howMany = jonas.friends
+console.log(jonas.firstName + ' has ' + howMany.length + ' friends, and his best friend is called ' + jonas.friends[0]);
+
+//Solucion de Jonas (Video)
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
