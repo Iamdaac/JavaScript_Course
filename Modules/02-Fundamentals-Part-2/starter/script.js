@@ -284,6 +284,7 @@ jonas['twitter'] = '@jonasschmedtman';
 console.log(jonas);
 */
 
+/*
 //Module Challenge
 //"Jonas has 3 friends, and his best friend is called Michael".
 const jonas = {
@@ -300,3 +301,164 @@ console.log(jonas.firstName + ' has ' + howMany.length + ' friends, and his best
 
 //Solucion de Jonas (Video)
 console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
+*/
+
+/*
+//Object Methods
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriverLicense: true,
+    // calcAge: function(birthYear){
+    //     return 2037 - birthYear;
+    // }
+    calcAge: function(){
+        // console.log(this);
+        return 2037 - this.birthYear;
+    }
+};
+
+console.log(jonas.calcAge()); //Dot Notation
+//console.log(jonas['calcAge'](1991)); //Bracket Notation
+*/
+
+/*
+//Module Challenge 
+// 'Jonas is a 46-years old teacher, and he has a driver's license.'
+const getSummary = {
+    fistName: 'Jonas',
+    birthYear: 1991,
+    job: 'teacher',
+    hasDriversLicense: true,
+
+    calcAge: function(){
+        return 2037 - this.birthYear
+    },
+
+    hasLicense: function(){
+        if(this.hasDriversLicense===true){
+            return "has a driver's license";
+        } else {
+            return "doesn't have a driver's license";
+        }
+    }
+}
+console.log(`${getSummary.fistName} is a ${getSummary.calcAge()}-years old ${getSummary.job}, and he ${getSummary.hasLicense()}.`)
+*/
+
+/*
+//CODE CHALLENGE #3
+Let's go back to Mark and John comparing their BMIs!
+This time, let's use objects to implement the calculations! Remember: BMI = mass / (height * height) (mass in kg and height in meters).
+Your tasks:
+For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith). 
+Name these objects as mark and john, and their properties exactly as fullName, mass and height.
+
+Create a calcBMI method on each object to calculate the BMI (the same method on both objects). 
+Assign the BMI value to a property called bmi (lowercase), and also return it from the method.
+
+Log to the console who has the higher BMI, together with the full name and the respective BMI. 
+Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!".
+
+TEST DATA: Marks weighs 78 kg and is 1.69 m tall. John weighs 92 kg and is 1.95 m tall.
+
+👋 OPTIONAL: You can watch my solution in video format in the next lecture
+
+IMPORTANT: The ** operator is not supported in this editor. Please make sure to use exactly this formula mass / (height * height), and not this one mass / (height ** 2).
+*/
+/*
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+
+    calcBMI: function(){
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+
+    calcBMI: function(){
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
+
+if (mark.calcBMI() > john.calcBMI()) {
+    console.log(`${mark.fullName}'s BMI (${mark.bmi.toFixed(1)}) is higher than ${john.fullName}'s (${john.bmi.toFixed(1)})!`);
+} else {
+    console.log(`${john.fullName}'s BMI (${john.bmi.toFixed(1)}) is higher than ${mark.fullName}'s (${mark.bmi.toFixed(1)})!`);
+}
+*/
+
+/*
+//FOR loop 
+//for loop keeps running while condition is true 
+for(let rep = 1; rep <= 10; rep++){
+    console.log(`Lifting weights repetition ${rep}`);
+}
+*/
+
+/*
+//Looping Arrays, Breaking and Continuing
+const jonas = [ 
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+const types = []; //Creamos un arreglo para almacenar los datos de otro arreglo
+
+for (let i = 0; i < jonas.length; i++) {
+    console.log(jonas[i], typeof jonas[i]);
+
+    types[i] = typeof jonas[i]; //Para agregar los resultados del typeof a nuestro arreglo vacio.
+    //Push Method
+    //types.push(typeof jonas[i]); 
+}
+console.log(types);
+
+//Ejemplo
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for(let i = 0; i < years.length; i++){
+    ages.push(2037 - years[i]); 
+}
+console.log(ages)
+*/
+
+//2 important statemenets for Loop
+const jonas = [ 
+    'Jonas',
+    'Schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+// Continue statement 
+console.log('---ONLY STRINGS---')
+for(let i = 0; i < jonas.length; i++){
+    if(typeof jonas[i] != 'string') continue; 
+    console.log(jonas[i], typeof jonas[i]);
+}
+
+// BREAK statement
+console.log('---BREAK WITH NUMBER---')
+for(let i = 0; i < jonas.length; i++){
+    if(typeof jonas[i] != 'number') break; 
+    console.log(jonas[i], typeof jonas[i]);
+}
